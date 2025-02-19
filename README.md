@@ -1,6 +1,10 @@
-# React + Vite
+# React + React router dom + Vite + SCORM
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**React router dom** must be used with Hash mode.
+
+**SCOM conclusion** There are 2 examples of conclusion in the _Home.jsx_.
+
+This template provides a minimal setup to get React working in Vite and SCORM with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
 

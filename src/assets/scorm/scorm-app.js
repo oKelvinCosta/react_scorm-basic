@@ -11,11 +11,13 @@
 import * as APIWrapper from "./APIWrapper.js";
 import * as SCOFunctions from "./SCOFunctions.js";
 
+// Variáveis de controle
+const DEV = false; // Para DESENVOLVIMENTO apenas, para não ficar dando alert caso não encontre a API. Se for true, não vai chamar a API
 const DEBUG = true;
 
 // Pega API
 // var scormAPI = APIWrapper.getAPIHandle ? APIWrapper.getAPIHandle() : null;
-export var scormAPI = APIWrapper.getAPIHandle();
+export var scormAPI = !DEV ? APIWrapper.getAPIHandle() : null;
 
 export const LESSON_STATUS = {
   notAttempted: "not attempted",
@@ -53,7 +55,7 @@ export var topicIsFinished;
  *******************************************************************************/
 window.onload = function () {
   // Se a API existir carregará a página
-  if (scormAPI) {
+  if (scormAPI && !DEV) {
     console.log("scormAPI");
 
     // Puxa do SCOFunctions.js
@@ -238,7 +240,6 @@ function meuDebug() {
       "getScormData(FIELDS.lessonStatus):" + getScormData(FIELDS.lessonStatus)
     );
     console.log("lessonLocation:" + getScormData(FIELDS.lessonLocation));
-    console.log("cmi.core.entry:" + getScormData("cmi.core.entry"));
     console.log(
       "getScormData(cmi.core.student_id):" + getScormData("cmi.core.student_id")
     );
