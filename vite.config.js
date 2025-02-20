@@ -6,7 +6,7 @@ export default defineConfig({
   // base: "./", // Base path of project USE THIS IN SCORM ENVIRONMENT
   base: "react_scorm-basic", // To use in github pages
   build: {
-    outDir: "dist", // Output directory
+    outDir: "docs", // Output directory
   },
   plugins: [react()],
 });
