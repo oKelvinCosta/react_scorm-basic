@@ -17,10 +17,10 @@ export default function Home() {
       <h1>SCORM Integration with React</h1>
 
       <p>Click here to conclude the lesson:</p>
-      {/* Button with processing done entirely in the scorm-app.js file */}
+      {/* Button with processing done entirely in the SCOApp.js file */}
       {/* <button id="finishButton">Finish</button> */}
 
-      {/* Button with modular treatment, calling parts of the code in functions from the scorm-app.js file: */}
+      {/* Button with modular treatment, calling parts of the code in functions from the SCOApp.js file: */}
       <FinishLessonButton />
     </>
   );

@@ -1,4 +1,4 @@
-import * as scormApp from "../assets/scorm/scorm-app.js";
+import * as scormApp from "../assets/scorm/SCOApp.js";
 
 export default function FinishLessonButton() {
   return (

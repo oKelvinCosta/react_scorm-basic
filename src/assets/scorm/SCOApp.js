@@ -13,10 +13,9 @@ import * as SCOFunctions from "./SCOFunctions.js";
 
 // Variáveis de controle
 const DEV = false; // Para DESENVOLVIMENTO apenas, para não ficar dando alert caso não encontre a API. Se for true, não vai chamar a API
-const DEBUG = true;
+const DEBUG = true; // Para mostrar mensagens de debug no console que eu personalizei e coloquei em lugares estratégicos desse arquivo
 
-// Pega API
-// var scormAPI = APIWrapper.getAPIHandle ? APIWrapper.getAPIHandle() : null;
+// Pega API do SCORM
 export var scormAPI = !DEV ? APIWrapper.getAPIHandle() : null;
 
 export const LESSON_STATUS = {
@@ -55,9 +54,7 @@ export var topicIsFinished;
  *******************************************************************************/
 window.onload = function () {
   // Se a API existir carregará a página
-  if (scormAPI && !DEV) {
-    console.log("scormAPI");
-
+  if (scormAPI) {
     // Puxa do SCOFunctions.js
     // Lá dentro inicia a API e trata os erros
     // Por fim, carrega a página
@@ -234,29 +231,34 @@ export function finishTopic() {
  */
 function meuDebug() {
   if (DEBUG) {
-    console.log("GET");
-    console.log("suspendData:" + suspendData);
+    console.log("--------INÍCIO DEBUG----------");
+
+    console.log("suspendData:", suspendData);
     console.log(
-      "getScormData(FIELDS.lessonStatus):" + getScormData(FIELDS.lessonStatus)
-    );
-    console.log("lessonLocation:" + getScormData(FIELDS.lessonLocation));
-    console.log(
-      "getScormData(cmi.core.student_id):" + getScormData("cmi.core.student_id")
+      "getScormData(FIELDS.lessonStatus):",
+      getScormData(FIELDS.lessonStatus)
     );
     console.log(
-      "getScormData(cmi.core.student_name):" +
-        getScormData("cmi.core.student_name")
+      "getScormData(cmi.core.student_id):",
+      getScormData("cmi.core.student_id")
     );
     console.log(
-      "getScormData(cmi.core.lesson_mode):" +
-        getScormData("cmi.core.lesson_mode")
-    );
-    console.log("getScormData(cmi.core.exit):" + getScormData("cmi.core.exit"));
-    console.log(
-      "getScormData(cmi.suspend_data):" + getScormData("cmi.suspend_data")
+      "getScormData(cmi.core.student_name):",
+      getScormData("cmi.core.student_name")
     );
     console.log(
-      "getScormData(cmi.launch_data):" + getScormData("cmi.launch_data")
+      "getScormData(cmi.core.lesson_mode):",
+      getScormData("cmi.core.lesson_mode")
     );
+    console.log(
+      "getScormData(cmi.suspend_data):",
+      getScormData("cmi.suspend_data")
+    );
+    console.log(
+      "getScormData(cmi.launch_data):",
+      getScormData("cmi.launch_data")
+    );
+
+    console.log("--------FIM DEBUG----------");
   }
 }

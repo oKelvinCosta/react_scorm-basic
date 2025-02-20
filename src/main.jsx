@@ -4,7 +4,7 @@ import "./index.css";
 
 import "./assets/scorm/APIWrapper.js";
 import "./assets/scorm/SCOFunctions.js";
-import "./assets/scorm/scorm-app.js";
+import "./assets/scorm/SCOApp.js";
 import App from "./App.jsx";
 
 createRoot(document.getElementById("root")).render(
