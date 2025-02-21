@@ -6,7 +6,7 @@
 
 This template provides a minimal setup to get React working in Vite and SCORM with HMR and some ESLint rules.
 
-## 🚀 Setup in a SCORM ENV
+## 🚀 Setup
 
 ### 1. vite.config.js
 
